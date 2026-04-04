@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  tracecredit-api:
+    container_name: tracecredit-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=production
+      - DATABASE_URL=sqlite:///./tracecredit.db
+      - ACTIVE_MODEL_VERSION=v2
+      - LOG_LEVEL=INFO
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./models:/app/models
+    restart: unless-stopped
+    networks:
+      - tracecredit-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  tracecredit-network:
+    driver: bridge
+
+volumes:
+  data:
+  logs:
+  models:

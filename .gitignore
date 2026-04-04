@@ -1,0 +1,87 @@
+venv/
+.venv/
+env/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.env.local
+.env.*.local
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+tracecredit.db
+
+# Logs
+logs/
+*.log
+mlruns/
+
+# Data
+data/raw/
+data/interim/
+data/processed/*.csv
+
+# Models (keep version directories but not large files)
+# models/v1/*.pkl
+# models/v2/*.pkl
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Reports (generated)
+reports/*.json
+
+# Temporary
+*.tmp
+.tmp/
+
+# Environment specific
+.env.production
+.env.staging
+__pycache__
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# AWS/IaC
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
