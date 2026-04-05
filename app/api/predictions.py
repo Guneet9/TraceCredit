@@ -12,7 +12,7 @@ from app.core.logger import get_logger
 
 logger = get_logger(__name__)
 
-router = APIRouter(prefix="/api/v2", tags=["credit-v2"])
+router = APIRouter(prefix="/api", tags=["credit"])
 
 fairness_analyzer = FairnessAnalyzer()
 explainability_service = ExplainabilityService()
